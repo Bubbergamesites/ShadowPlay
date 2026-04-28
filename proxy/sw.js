@@ -1,3 +1,9 @@
+// Calculate the dynamic base path for the Service Worker.
+const swPath = self.location.pathname;
+const basePath = swPath.substring(0, swPath.lastIndexOf('/') + 1);
+
+// Fallback for basePath to ensure it's always defined
+self.basePath = self.basePath || basePath;
 
 const ADBLOCK = {
     blocked: [
