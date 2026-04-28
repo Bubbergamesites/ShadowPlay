@@ -1,6 +1,6 @@
 // Calculate the dynamic base path for the Service Worker.
 const swPath = self.location.pathname;
-const basePath = './proxy/';
+const basePath = './';
 
 // Fallback for basePath to ensure it's always defined
 self.basePath = self.basePath || basePath;
