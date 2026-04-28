@@ -122,8 +122,7 @@ class Topbar {
                 <!-- Logo/Brand -->
                 <div class="topbar-brand">
                     <a href="#" onclick="navigateTo('home')" class="brand-link">
-                        <span class="brand-icon">🚀</span>
-                        <span class="brand-text">Unblockee</span>
+                        <span class="brand-text">ShadowPlay</span>
                     </a>
                 </div>
 
@@ -329,7 +328,7 @@ class Topbar {
             });
         }
 
-        // Prxxy Settings button removed - WISP settings now in Staticsj browser
+        // Prxxy Settings button removed - WISP settings now in proxy browser
 
 
 
@@ -418,7 +417,7 @@ class Topbar {
             window.parent.postMessage({ type: 'navigate', url: searchUrl }, '*');
         } else {
             // We're on the main page - navigate to browser with search parameter and engine
-            const browserSearchUrl = `/Staticsj/index.html#search=${encodeURIComponent(query)}&engine=${encodeURIComponent(engine)}`;
+            const browserSearchUrl = `/proxy/index.html#search=${encodeURIComponent(query)}&engine=${encodeURIComponent(engine)}`;
             window.location.href = browserSearchUrl;
         }
 
@@ -815,15 +814,10 @@ class Topbar {
         if (document.querySelector('script[src*="cdn.jsdelivr.net/npm/@widgetbot/crate@3"]')) {
             return;
         }
-
-        // UNBLOCKEE WIDGETBOT MODIFICATION
-        // To disable WidgetBot, comment out the following lines (lines 821-840)
-        // To enable WidgetBot, uncomment the following lines (lines 821-840)
-        
         // Create and load the WidgetBot script
         const script = document.createElement('script');
         // Using new embed URL for WidgetBot
-        script.src = '../Staticsj/embed.html#widgetbot';
+        script.src = '../proxy/embed.html#widgetbot';
         script.async = true;
         script.defer = true;
         script.onload = () => {
@@ -869,11 +863,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.navigateTo = (page) => {
             // Navigation routes - all internal pages use root-anchored paths
             const routes = {
-                'home': '/index.html',
-                'games': '/pages/games.html',
-                'movies': '/pages/movies.html',
-                'music': '/pages/music.html',
-                'browser': '/Staticsj/index.html'
+                'home': '/',
+                'games': '/pages/games',
+                'movies': '/pages/movies',
+                'music': '/pages/music',
+                'browser': '/proxy/'
             };
 
             // Handle hash-based routing for settings
