@@ -260,7 +260,7 @@ class ChangelogModal {
                         <span class="version-badge">v${this.changelog.version}</span>
                         <span class="release-type-badge ${this.changelog.releaseType}">${this.changelog.releaseType}</span>
                     </div>
-                    <h2 class="changelog-title">What's New in Unblockee</h2>
+                    <h2 class="changelog-title">What's New in ShadowPlay</h2>
                     <p class="changelog-date">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
