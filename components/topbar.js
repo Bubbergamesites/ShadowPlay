@@ -417,7 +417,7 @@ class Topbar {
             window.parent.postMessage({ type: 'navigate', url: searchUrl }, '*');
         } else {
             // We're on the main page - navigate to browser with search parameter and engine
-            const browserSearchUrl = `/proxy/index.html#search=${encodeURIComponent(query)}&engine=${encodeURIComponent(engine)}`;
+            const browserSearchUrl = `/Staticsj/index.html#search=${encodeURIComponent(query)}&engine=${encodeURIComponent(engine)}`;
             window.location.href = browserSearchUrl;
         }
 
@@ -817,7 +817,7 @@ class Topbar {
         // Create and load the WidgetBot script
         const script = document.createElement('script');
         // Using new embed URL for WidgetBot
-        script.src = '../proxy/embed.html#widgetbot';
+        script.src = '../Staticsj/embed.html#widgetbot';
         script.async = true;
         script.defer = true;
         script.onload = () => {
@@ -867,7 +867,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 'games': '/pages/games',
                 'movies': '/pages/movies',
                 'music': '/pages/music',
-                'browser': '/proxy/'
+                'browser': '/Staticsj/'
             };
 
             // Handle hash-based routing for settings
