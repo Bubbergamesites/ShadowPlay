@@ -7,14 +7,14 @@ self.basePath = self.basePath || basePath;
 
 self.$scramjet = {
     files: {
-        wasm: `./JS/scramjet.wasm.wasm`,
-        sync: `./JS/scramjet.sync.js`,
+        wasm: `${basePath}JS/scramjet.wasm.wasm`,
+        sync: `${basePath}JS/scramjet.sync.js`,
     }
 };
 
 // Load ALL required scripts at the top level.
-importScripts(`./JS/scramjet.all.js`);
-importScripts(`./B/index.js`);
+importScripts(`${basePath}JS/scramjet.all.js`);
+importScripts(`${basePath}B/index.js`);
 
 const { ScramjetServiceWorker } = $scramjetLoadWorker();
 
@@ -74,8 +74,8 @@ scramjet.addEventListener("request", async (e) => {
                  return new Response("WISP URL configuration failed in SW.", { status: 500, statusText: "Internal Server Error" });
             }
 
-            const connection = new BareMux.BareMuxConnection(`./B/worker.js`);
-			await connection.setTransport(`./Ep/index.mjs`, [{ wisp: wispConfig.wispurl }]);
+            const connection = new BareMux.BareMuxConnection(`${basePath}B/worker.js`);
+			await connection.setTransport(`${basePath}Ep/index.mjs`, [{ wisp: wispConfig.wispurl }]);
 			scramjet.client = connection;
 		}
 
