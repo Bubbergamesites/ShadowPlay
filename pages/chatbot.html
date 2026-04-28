@@ -4,9 +4,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Unblockee AI</title>
+  <title>ShadowPlay AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Unblockee AI - Advanced AI chat interface">
+  <meta name="description" content="ShadowPlay AI - Advanced AI chat interface">
   <meta name="theme-color" content="#eaeaea">
 
   <!-- Font Awesome for Icons -->
@@ -1115,7 +1115,7 @@
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <div class="brand-section">
-          <span>Unblockee AI</span>
+          <span>ShadowPlay AI</span>
         </div>
         <button class="sidebar-toggle" id="sidebarToggle" title="Collapse sidebar">
           <i data-lucide="panel-left-close" width="20" height="20"></i>
@@ -1143,7 +1143,7 @@
           <button class="menu-toggle" id="menuToggle" title="Toggle sidebar">
             <i data-lucide="panel-left-open" width="20" height="20"></i>
           </button>
-          <span class="chat-title" id="chatTitle">Unblockee AI</span>
+          <span class="chat-title" id="chatTitle">ShadowPlay AI</span>
           <button class="edit-title-btn" id="editTitleBtn" title="Edit conversation title">
             <i data-lucide="pencil" width="16" height="16"></i>
           </button>
@@ -1161,7 +1161,7 @@
       <div class="chat-body" id="chatBody">
         <div class="hero-section" id="heroSection">
           <h1 class="hero-title">What's on your mind?</h1>
-          <p class="hero-subtitle">Chat with Unblockee AI</p>
+          <p class="hero-subtitle">Chat with ShadowPlay AI</p>
           <div class="hero-input-wrapper">
             <div class="hero-input-container">
               <input class="hero-input" id="heroInput" placeholder="Ask me anything..." autocomplete="off">
@@ -1193,7 +1193,7 @@
 
       <div class="chat-input-container" id="chatInputContainer">
         <div class="input-wrapper">
-          <textarea class="chat-input" id="chatInput" placeholder="Message Unblockee AI..." rows="1"></textarea>
+          <textarea class="chat-input" id="chatInput" placeholder="Message ShadowPlay AI..." rows="1"></textarea>
           <div class="input-actions">
             <div class="mode-selector-wrapper">
               <button class="mode-toggle-btn" id="modeToggleButton" title="Change mode">
@@ -1238,12 +1238,12 @@
     let imageModels = [];
 
     const settings = {
-      temperature: parseFloat(localStorage.getItem('unblockee_aiTemperature')) || 0.7,
-      autoSave: localStorage.getItem('unblockee_aiAutoSave') !== 'false', // Default true
+      temperature: parseFloat(localStorage.getItem('shadowplay_aiTemperature')) || 0.7,
+      autoSave: localStorage.getItem('shadowplay_aiAutoSave') !== 'false', // Default true
     };
 
-    const STATE_KEY = 'unblockee_ai_state_v1';
-    const MODEL_KEY = 'unblockee_ai_model_v1';
+    const STATE_KEY = 'shadowplay_ai_state_v1';
+    const MODEL_KEY = 'shadowplay_ai_model_v1';
 
     // DOM references
     const appContainer = document.getElementById('appContainer');
@@ -1271,10 +1271,10 @@
 
     // Utility: update page title based on current conversation
     function aiUpdatePageTitle(title) {
-      if (title && title !== 'Unblockee AI') {
-        document.title = title + ' - Unblockee AI';
+      if (title && title !== 'ShadowPlay AI') {
+        document.title = title + ' - ShadowPlay AI';
       } else {
-        document.title = 'Unblockee AI';
+        document.title = 'ShadowPlay AI';
       }
     }
 
@@ -1430,7 +1430,7 @@
       const id = Date.now().toString();
       const conv = {
         id,
-        title: 'Unblockee AI',
+        title: 'ShadowPlay AI',
         messages: [],
         createdAt: Date.now(),
         updatedAt: Date.now(),
@@ -1455,7 +1455,7 @@
       chatInput.style.height = 'auto';
       sendBtn.disabled = true;
 
-      chatTitle.textContent = 'Unblockee AI';
+      chatTitle.textContent = 'ShadowPlay AI';
       aiUpdatePageTitle(null);
       editTitleBtn.style.display = 'none';
     }
@@ -1875,7 +1875,7 @@ async function aiSendMessage(rawInput) {
     conv.updatedAt = Date.now();
 
     // Trigger AI Title Generation on first message
-    if (conv.messages.length === 1 && conv.title === 'Unblockee AI') {
+    if (conv.messages.length === 1 && conv.title === 'ShadowPlay AI') {
         aiGenerateTitle(input);
     }
 
@@ -2066,8 +2066,8 @@ function aiLoadState() {
         currentConversationId = parsed.currentConversationId || null;
 
         // Load settings from global storage instead of local
-        settings.temperature = parseFloat(localStorage.getItem('unblockee_aiTemperature')) || 0.7;
-        settings.autoSave = localStorage.getItem('unblockee_aiAutoSave') !== 'false';
+        settings.temperature = parseFloat(localStorage.getItem('ShadowPlay_aiTemperature')) || 0.7;
+        settings.autoSave = localStorage.getItem('ShadowPlay_aiAutoSave') !== 'false';
 
         if (conversations.length === 0) {
             aiCreateNewConversation();
