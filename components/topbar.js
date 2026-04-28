@@ -122,6 +122,7 @@ class Topbar {
                 <!-- Logo/Brand -->
                 <div class="topbar-brand">
                     <a href="#" onclick="navigateTo('home')" class="brand-link">
+                        <span class="brand-icon"></span>
                         <span class="brand-text">ShadowPlay</span>
                     </a>
                 </div>
@@ -328,7 +329,7 @@ class Topbar {
             });
         }
 
-        // Prxxy Settings button removed - WISP settings now in proxy browser
+        // Prxxy Settings button removed - WISP settings now in Staticsj browser
 
 
 
@@ -610,7 +611,7 @@ class Topbar {
     // === CLOAK & PANIC KEY CENTRALIZATION ===
 
     getCloakMode() {
-        const mode = StorageUtils.get('unblockee_cloakMode') || 'none';
+        const mode = StorageUtils.get('shadowplay_cloakMode') || 'none';
         if (mode === 'about:blank' || mode === 'blob' || mode === 'none') {
             return mode;
         }
@@ -680,7 +681,7 @@ class Topbar {
 
     handlePanicKey(e) {
         // Support custom panic key from localStorage
-        let panicKey = localStorage.getItem('unblockee_customPanicKey') || StorageUtils.get('unblockee_panicKeys') || 'none';
+        let panicKey = localStorage.getItem('shadowplay_customPanicKey') || StorageUtils.get('shadowplay_panicKeys') || 'none';
         panicKey = panicKey.toLowerCase().trim();
         if (panicKey === 'none' || panicKey === '') return;
 
@@ -729,7 +730,7 @@ class Topbar {
         if (!matchCombo(panicKey)) return;
 
         // Get custom panic URL
-        let targetUrl = localStorage.getItem('unblockee_customPanicUrl') || StorageUtils.get('panicAction') || StorageUtils.get('unblockee_panicAction') || 'https://www.google.com';
+        let targetUrl = localStorage.getItem('shadowplay_customPanicUrl') || StorageUtils.get('panicAction') || StorageUtils.get('shadowplay_panicAction') || 'https://www.google.com';
 
         // Validate URL
         try {
@@ -814,6 +815,11 @@ class Topbar {
         if (document.querySelector('script[src*="cdn.jsdelivr.net/npm/@widgetbot/crate@3"]')) {
             return;
         }
+
+        // shadowplay WIDGETBOT MODIFICATION
+        // To disable WidgetBot, comment out the following lines (lines 821-840)
+        // To enable WidgetBot, uncomment the following lines (lines 821-840)
+        
         // Create and load the WidgetBot script
         const script = document.createElement('script');
         // Using new embed URL for WidgetBot
@@ -824,7 +830,7 @@ class Topbar {
             // Initialize WidgetBot after script loads
             try {
                 new Crate({
-                    server: '1334648765679800442', // Unblockee's server
+                    server: '1334648765679800442', // shadowplay's server
                     channel: '1336060647280083138', // #updates
                     fullscreenMode: true
                 });
@@ -863,11 +869,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.navigateTo = (page) => {
             // Navigation routes - all internal pages use root-anchored paths
             const routes = {
-                'home': '/',
-                'games': '/pages/games',
-                'movies': '/pages/movies',
-                'music': '/pages/music',
-                'browser': '/Staticsj/'
+                'home': '/index.html',
+                'games': '/pages/games.html',
+                'movies': '/pages/movies.html',
+                'music': '/pages/music.html',
+                'browser': '/Staticsj/index.html'
             };
 
             // Handle hash-based routing for settings
