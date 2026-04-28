@@ -18,7 +18,7 @@ const DEFAULT_SEARCH_ENGINES = {
 let scramjet;
 
 document.addEventListener('DOMContentLoaded', async function () {
-    const basePath = location.pathname.replace(/[^/]*$/, '');
+    const basePath = './';
 
     const { ScramjetController } = $scramjetLoadController();
 
