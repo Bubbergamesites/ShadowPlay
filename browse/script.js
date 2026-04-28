@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 });
 
-const connection = new BareMux.BareMuxConnection(`${basePath}B/worker.js`);
+const connection = new BareMux.BareMuxConnection(`./B/worker.js`);
 const store = {
     url: "https://",
     wispurl: localStorage.getItem("proxServer") || _CONFIG.wispurl,
     bareurl: _CONFIG?.bareurl || (location.protocol === "https:" ? "https" : "http") + "://" + location.host + "/bare/"
 };
-connection.setTransport(`${basePath}Ep/index.mjs`, [{
+connection.setTransport(`./Ep/index.mjs`, [{
     wisp: store.wispurl
 }]);
 
@@ -615,7 +615,7 @@ function applyWispSettings() {
 
     // Update store and reconnect BareMux transports
     store.wispurl = newWispUrl;
-    connection.setTransport(`${basePath}Ep/index.mjs`, [{
+    connection.setTransport(`./Ep/index.mjs`, [{
         wisp: newWispUrl
     }]);
 
