@@ -5,7 +5,7 @@
 const basePath = '/Staticsj/';
 
 let _CONFIG = {
-  wispurl: localStorage.getItem("proxServer") || "wss://wisp.rhw.one/wisp/", // fallback to default WISP URL if proxServer not set
+  wispurl: localStorage.getItem("proxServer") || "wss://wisp.mercurywork.shop", // fallback to default WISP URL if proxServer not set
   bareurl: undefined // remove default value, rely on runtime construction
 };
 
