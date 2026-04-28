@@ -1,6 +1,6 @@
 {
   "version": "1.0.1",
-  "releaseDate": "2025-11-25",
+  "releaseDate": "2026-4-28",
   "releaseType": "patch",
   "semanticVersioning": {
     "major": 1,
@@ -9,10 +9,10 @@
   },
   "changes": {
     "new": [
-      "Chatbot is updated allowing mode switching and math symbols"
+      "Hey guys"
     ],
     "improved": [
-      "Made browser allow new shortcuts and loading bar"
+      "made a couple of changes etc"
     ],
     "fixed": [
       "Movies tab works along with search"
@@ -22,6 +22,6 @@
   "breakingChanges": [
   ],
   "links": {
-    "github": "https://github.com/unblockee-testing/"
+    "github": "https://github.com/Bubbergamesites/ShadowPlay"
   }
 }
