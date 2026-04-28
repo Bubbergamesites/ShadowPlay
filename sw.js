@@ -98,7 +98,7 @@ self.addEventListener('fetch', event => {
       // Network only when offline mode disabled
       event.respondWith(fetch(request));
     }
-  } else if (url.pathname.startsWith('/Staticsj/')) {
+  } else if (url.pathname.startsWith('/proxy/')) {
     // Proxy requests - network first
     event.respondWith(handleProxyRequest(request));
   } else {
