@@ -1,0 +1,55 @@
+<html><head>
+    <base href="https://cdn.jsdelivr.net/gh/genizy/code-editor/">
+    <title>gn html editor</title>
+    <link rel="stylesheet" href="styles/editor.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.4/beautify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.4/beautify-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.4/beautify-html.min.js"></script>
+</head>
+<body>
+    <div id="editor-container">
+        <h1>Code Editor</h1>
+
+        <div class="code-section">
+            <h3>HTML</h3>
+            <pre><code class="language-html hljs language-xml" id="htmlcode" contenteditable="true" data-highlighted="yes"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"button()"</span>&gt;</span>yoo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+            <button id="htmlbeautify">Beautify HTML</button>
+        </div>
+
+        <div class="code-section">
+            <h3>JavaScript</h3>
+            <pre><code class="language-js hljs language-javascript" id="jscode" contenteditable="true" data-highlighted="yes"><span class="hljs-keyword">function</span> <span class="hljs-title function_">button</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">"yooo"</span>);
+}</code></pre>
+            <button id="jsbeautify">Beautify JS</button>
+        </div>
+
+        <div class="code-section">
+            <h3>CSS</h3>
+            <pre><code class="language-css hljs" id="csscode" contenteditable="true" data-highlighted="yes"><span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">display</span>: flex;
+}</code></pre>
+            <button id="cssbeautify">Beautify CSS</button>
+        </div>
+        <footer>
+            <p>Made for: <a href="https://gn-math.github.io" target="_blank">gn-math.github.io</a></p>
+        </footer>
+    </div>
+    
+
+    <div id="iframe-container">
+        <div class="preview-header">
+            <h3>Preview</h3>
+            <button onclick="runCode()">Run HTML</button>
+        </div>
+        <iframe id="htmliframe"></iframe>
+    </div>
+
+    <script src="scripts/shared.js"></script>
+    <script src="scripts/htmleditor.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.4/beautify.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.4/beautify-css.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.4/beautify-html.min.js"></script><script src="https://cdn.jsdelivr.net/gh/genizy/code-editor/scripts/shared.js"></script><script src="https://cdn.jsdelivr.net/gh/genizy/code-editor/scripts/htmleditor.js"></script></body></html>
