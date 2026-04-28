@@ -10,7 +10,7 @@ let _CONFIG = {
 };
 
 // Verify default WISP URL passes validation
-console.assert(isValidWispUrl("wss://wisp.rhw.one/wisp/"), "Default WISP URL should pass validation");
+console.assert(isValidWispUrl("wss://wisp.mercurywork.shop"), "Default WISP URL should pass validation");
 
 // Valid URL patterns for WISP servers
 const validWispPatterns = [
